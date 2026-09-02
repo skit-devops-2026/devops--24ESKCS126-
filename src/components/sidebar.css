@@ -1,0 +1,40 @@
+.sidebar {
+    width: clamp(220px, 20%, 300px);
+    height: 100vh;
+    background-color:#F9F9FF ;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 15px;
+}
+
+.logo span:first-child{
+    font-size: 30px;
+}
+
+.logo span:last-child{
+    font-size: 20px;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color:#17152B;;
+    padding: 20px 20px;
+}
+
+nav :hover{
+    background-color: #EAE4FD;
+    color:#5B2BC5;
+    border-radius: 5px;
+}

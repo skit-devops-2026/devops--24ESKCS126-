@@ -1,0 +1,14 @@
+.app{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main{
+    flex: 1;
+    min-width: 0;
+}
+
+.content{
+    padding:px;
+}
