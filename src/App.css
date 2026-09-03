@@ -1,14 +1,27 @@
-.app{
-    display: flex;
+:root {
+    --sidebar-width: 220px;
+    --topbar-height: 60px;
+}
+
+.app {
     width: 100%;
     min-height: 100vh;
 }
 
-.main{
-    flex: 1;
+.main {
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+
     min-width: 0;
+
+    box-sizing: border-box;
 }
 
-.content{
-    padding:px;
+.content {
+    padding-top: 60px;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
 }

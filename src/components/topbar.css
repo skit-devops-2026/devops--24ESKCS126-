@@ -1,17 +1,64 @@
-.topbar{
-    width: 100%;
+.topbar {
+    position: fixed;
+
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+
     height: 60px;
-    background-color: #FCFCFF;
+
+    box-sizing: border-box;
+
+    background-color: #fcfcff;
+
+    border-bottom: 1px solid #eeeaf7;
+
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
+
+    z-index: 999;
 }
+
+
+/* RIGHT SIDE */
 
 .rightbar {
     display: flex;
     align-items: center;
+
     gap: 12px;
+
+    padding-right: 25px;
+
+    color: #29234a;
+
+    font-family: Georgia, serif;
+
     font-size: 15px;
-    padding-right: 20px;
 }
 
+
+/* ICONS */
+
+.topbar-icon {
+    font-size: 21px;
+
+    color: #29234a;
+}
+
+.profile-picture {
+    font-size: 27px;
+
+    color: #29234a;
+}
+
+.dropdown-icon {
+    font-size: 20px;
+
+    color: #29234a;
+}
+
+.username {
+    margin-left: 1px;
+}

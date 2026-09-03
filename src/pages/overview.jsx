@@ -30,7 +30,7 @@ function Overview(){
                         <div className='problems_solve_text'>
                             <p className='title'>Problems solved</p>
                             <p className='number'>124</p>
-                            <p className='subtitle'>Across plateforms</p>
+                            <p className='subtitle'>Across platforms</p>
                         </div>
                     </div>
                     <div className='problems_solve'>

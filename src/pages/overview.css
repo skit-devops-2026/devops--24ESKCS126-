@@ -1,89 +1,319 @@
-.overview{
-    margin:20px;
+.overview {
+    padding: 38px 42px 40px;
+    box-sizing: border-box;
+    color: #29234a;
 }
 
-.cards{
+
+/* =========================
+   HEADER
+========================= */
+
+.overview > h1 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #17152b;
+}
+
+.overview > p {
+    margin: 10px 0 0;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+
+    color: #29234a;
+}
+
+
+/* =========================
+   CARDS SECTION
+========================= */
+
+.cards {
     display: grid;
-    gap: 30px;
-    padding-top: 40px;
+
+    gap: 28px;
+
+    padding-top: 48px;
 }
 
-.stat_cards{
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.stat_cards {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:27px;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
 }
 
-.problems_solve{
+
+.problems_solve {
+    min-width: 0;
+    height: 105px;
+
+    box-sizing: border-box;
+
     display: flex;
-    box-shadow:0 4px 20px rgba(91, 43, 197, 0.08) ; 
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e4dfec;
+
+    border-radius: 13px;
+
+    box-shadow: 0 5px 18px rgba(83, 54, 150, 0.05);
+
+    transition: 0.2s ease;
 }
 
-.problems_solve{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 220px;
-    height: 80px;
-    border:1px solid #ddd;
-    border-radius: 10px;
+.problems_solve:hover {
+    transform: translateY(-2px);
 
+    box-shadow: 0 8px 22px rgba(83, 54, 150, 0.09);
 }
 
-.problems_solve .icon{
-    margin: 20px;
+
+/* =========================
+   STAT ICON
+========================= */
+
+.problems_solve .icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    margin: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #5b2bc5;
 }
+
+
+/* =========================
+   STAT TEXT
+========================= */
 
 .problems_solve_text {
-    margin:2px;
+    min-width: 0;
+
+    margin: 0;
 }
 
-.problems_solve_text p{
-    margin:2px;
+.problems_solve_text p {
+    margin: 0;
 }
 
-.problems_solve_text .title{
-    font-size: 14px;
-}
 
-.problems_solve_text .number{
-    font-size: 30px;
-}
+/* Title */
 
-.problems_solve_text .subtitle{
-    font-size: 12px;
-}
+.problems_solve_text .title {
+    font-family: Arial, sans-serif;
 
-.recommandation_box{
-    border: 1px solid #E9E4F8;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #E3D9FC;
-    margin-top: 15px;
-}
-
-.recommandation_box .tagline{
-    color:#03011e ;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 13px;
+
+    color: #29234a;
 }
 
-.recommandation_box .qtype{
+
+/* Number */
+
+.problems_solve_text .number {
+    margin-top: 3px;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    color: #17152b;
+}
+
+
+/* Subtitle */
+
+.problems_solve_text .subtitle {
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #77718f;
+}
+
+
+/* =========================
+   RECOMMENDATION BOX
+========================= */
+
+.recommandation_box {
+    min-height: 230px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    background: #e5dafc;
+
+    border: 1px solid #ddd0fa;
+
+    border-radius: 14px;
+}
+
+
+/* Soft decorative shape */
+
+.recommandation_box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: 45px;
+    bottom: -125px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================
+   RECOMMENDATION TEXT
+========================= */
+
+.recommandation_box_text {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+
+/* Tagline */
+
+.recommandation_box .tagline {
+    margin: 0 0 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    color: #17152b;
+}
+
+
+/* Heading */
+
+.recommandation_box .qtype {
+    margin: 0 0 14px;
+
+    font-family: Arial, sans-serif;
+
     font-size: 25px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top:5px ;
-    color: #5B2BC5;
+
+    font-weight: 700;
+
+    color: #5b2bc5;
 }
 
-.recommandation_box .para_why{
-    margin-bottom: 20px;
-    color: #0d0128;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+/* Description */
+
+.recommandation_box .para_why {
+    margin: 0 0 24px;
+
+    max-width: 900px;
+
+    font-family: Arial, sans-serif;
+
     font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #29234a;
 }
 
-.recommandation_box_text button{
-    background-color: #5B2BC5;
-    color: white;
-    border: 0px;
-    border-radius: 5px;
-    padding:10px;
+
+/* =========================
+   BUTTON
+========================= */
+
+.recommandation_box_text button {
+    padding: 11px 17px;
+
+    background: #5b2bc5;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.recommandation_box_text button:hover {
+    background: #4820aa;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .stat_cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .overview {
+        padding: 28px 20px;
+    }
+
+    .stat_cards {
+        grid-template-columns: 1fr;
+    }
+
+    .recommandation_box {
+        padding: 24px;
+    }
+
 }

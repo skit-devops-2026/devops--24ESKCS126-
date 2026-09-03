@@ -24,8 +24,14 @@ const dsaTopics = {
         "Merge Lists"
     ],
 
-    "Stack & Queue": [
+    "Stack": [
         "Monotonic Stack",
+        "Next Greater Element",
+        "Balanced Parentheses"
+    ],
+
+    "Queue": [
+        "Circular Queue",
         "Deque",
         "Priority Queue"
     ],
@@ -65,13 +71,13 @@ const initialNodes = [
 
     {
         id: 'arrays',
-        position: { x: 200, y: 150 },
+        position: { x: 150, y: 150 },
         data: { label: 'Arrays' },
     },
 
     {
         id: 'strings',
-        position: { x: 500, y: 100 },
+        position: { x: 500, y: 80 },
         data: { label: 'Strings' }
     },
 
@@ -83,13 +89,13 @@ const initialNodes = [
 
     {
         id: 'stack',
-        position: { x: 150, y: 450 },
+        position: { x: 100, y: 450 },
         data: { label: 'Stack' }
     },
 
     {
         id: 'queue',
-        position: { x: 400, y: 500 },
+        position: { x: 350, y: 500 },
         data: { label: 'Queue' }
     },
 
@@ -180,52 +186,165 @@ function SkillMap(){
     const [expanded, setExpanded] = useState({});
     const handleNodeClick = (event, node) => {
 
+        const topicName = node.data.label;
+
+        if(!dsaTopics[topicName]) return;
+
         setExpanded(prev => ({
             ...prev,
             [node.id]: !prev[node.id]
         }));
     };
-    const visibleNodes=[...initialNodes];
-    Object.keys(expanded).forEach(topic => {
-        if(expanded[topic]){
-            const parentNode = initialNodes.find(
-                node => node.id === topic
-            );
 
-            if(!parentNode) return;
+    const directions = {
 
-            const topicName = parentNode.data.label;
+        arrays: {
+            x: -1,
+            y: -1
+        },
 
-            const subtopics = dsaTopics[topicName];
+        strings: {
+            x: 0,
+            y: -1
+        },
 
-            if(!subtopics) return;
+        'linked-list': {
+            x: 1,
+            y: -1
+        },
 
-            subtopics.forEach((subtopic,index)=> {
-                visibleNodes.push({
-                    id:`${topic}-${index}`,
+        stack: {
+            x: -1,
+            y: 1
+        },
 
-                    position:{
-                        x: parentNode.position.x+ index*160,
-                        y: parentNode.position.y -130
-                    },
+        queue: {
+            x: -0.5,
+            y: 1
+        },
 
-                    data:{
-                        label:subtopic
-                    }
-                });
-            });
+        trees: {
+            x: 0.5,
+            y: 1
+        },
+
+        graphs: {
+            x: 1,
+            y: 1
+        },
+
+        'dynamic-programming': {
+            x: 1,
+            y: 0
         }
+    };
+
+    const topicColors = {
+        arrays: '#8B5CF6',
+        strings: '#EC4899',
+        'linked-list': '#F59E0B',
+        stack: '#10B981',
+        queue: '#06B6D4',
+        trees: '#3B82F6',
+        graphs: '#6366F1',
+        'dynamic-programming': '#A855F7'
+    };
+
+
+    const visibleNodes=[...initialNodes];
+
+    Object.keys(expanded).forEach(topic => {
+        if(!expanded[topic]) return;
+
+        const parentNode = initialNodes.find(
+            node => node.id === topic
+        );
+
+        if(!parentNode) return;
+
+        const topicName = parentNode.data.label;
+
+        const subtopics = dsaTopics[topicName];
+
+        if(!subtopics) return;
+
+
+        const direction = directions[topic] || {
+            x: 1,
+            y: 0
+        };
+
+        const perpendicular = {
+            x: -direction.y,
+            y: direction.x
+        };
+
+
+        const distance = 220;
+        const spread = 130;
+
+        subtopics.forEach((subtopic,index)=> {
+            const center = (subtopics.length - 1) / 2;
+
+            const spreadAmount =
+                (index - center) * spread;
+
+
+            const x =
+                parentNode.position.x +
+                direction.x * distance +
+                perpendicular.x * spreadAmount;
+
+
+            const y =
+                parentNode.position.y +
+                direction.y * distance +
+                perpendicular.y * spreadAmount;
+                
+            visibleNodes.push({
+            id:`${topic}-${index}`,
+            type:'bezier',
+
+            position:{
+                x:x,
+                y:y
+            },
+
+            data:{
+                label:subtopic
+            }
+        });
+        });
     });
 
     const visibleEdges = [...initialEdges];
 
     Object.keys(expanded).forEach(topic => {
-        if(expanded[topic]){
-            const parentNode = initialNodes.find(
-                node => node.id === topic 
-            )
-        }
-    })
+        if(!expanded[topic]) return;
+        const parentNode = initialNodes.find(
+            node => node.id === topic 
+        );
+
+        if(!parentNode) return;
+        const topicName = parentNode.data.label;
+        const subtopics = dsaTopics[topicName];
+
+        if(!subtopics) return;
+
+        subtopics.forEach((subtopic,index) =>{
+            visibleEdges.push({
+                id: `${topic}-edge-${index}`,
+                source: topic,
+                target:`${topic}-${index}`,
+                type:'bezier',
+
+                style :{
+                    stroke:topicColors[topic],
+                    strokeWidth:2
+                }
+                });
+            });    
+        });
     return(
         <div className='skill-map-page'>
             <div className='skill-map-header'>
