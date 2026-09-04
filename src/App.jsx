@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./components/topbar.jsx"
 import Sidebar from "./components/sidebar.jsx"
@@ -20,7 +20,6 @@ function DashboardLayout(){
                 <Topbar/>
                 <div className='content'>
                     <Routes>
-                        <Route path="/" element={<Landing/>}/>
                         <Route path="/overview" element={<Overview/>}/>
                         <Route path="/my-skill-map" element={<SkillMap/>}/>
                         <Route path="/recommendations" element={<Recommendations/>}/>

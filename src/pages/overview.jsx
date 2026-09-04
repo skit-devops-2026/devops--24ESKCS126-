@@ -1,5 +1,5 @@
 import './overview.css'
-import {MdCode,MdGpsFixed} from "react-icons/md";
+import {MdCode} from "react-icons/md";
 
 
 function Overview(){

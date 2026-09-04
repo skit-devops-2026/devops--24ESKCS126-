@@ -1,16 +1,37 @@
-# React + Vite
+# DSAForge
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> A platform for analyzing DSA performance and recommending problems based on skill level.
 
-Currently, two official plugins are available:
+## Author
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Roll No. | Name | GitHub username |
+|---|---|---|
+| 24ESKCS126| Garima Yaduvanshi | Garima0520 |
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+DSAForge is a platform designed to help students improve their Data Structures and Algorithms skills. It analyzes their problem-solving performance and provides personalized recommendations to help them identify weak areas and practice relevant problems.
 
-## Expanding the Oxlint configuration
+## Tech stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Frontend: React, Vite, JavaScript, CSS
+- Backend:  Django, Django REST Framework
+- Database: MySQL
+- Machine Learning: Python, Scikit-learn
+
+## Running locally
+
+```bash
+make install
+make run
+```
+
+## Live URL
+
+<Add once M5 is done. Until then, leave as is.>
+
+
+## Health endpoint
+
+`GET /health` returns the running commit SHA. See `Makefile` and the milestone
+sheet for why this is required.
