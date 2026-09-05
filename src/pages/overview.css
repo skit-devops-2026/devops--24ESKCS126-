@@ -260,31 +260,20 @@
    BUTTON
 ========================= */
 
-.recommandation_box_text button {
-    padding: 11px 17px;
-
-    background: #5b2bc5;
-
-    color: #ffffff;
-
-    border: none;
-
-    border-radius: 7px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
+.overview-recommendation-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #5b2bc5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 600;
-
-    cursor: pointer;
-
     transition: 0.2s ease;
 }
 
-.recommandation_box_text button:hover {
-    background: #4820aa;
-
+.overview-recommendation-btn:hover {
+    background-color: #4b20ad;
     transform: translateY(-1px);
 }
 

@@ -250,6 +250,25 @@
     text-decoration: underline;
 }
 
+.form-error {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 7px;
+    background: #fff0f0;
+    color: #c0392b;
+    font-size: 12px;
+}
+
+
+.forgot-message {
+    margin: 8px 0 14px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    background: #f0ebff;
+    color: #5b2bc5;
+    font-size: 12px;
+    line-height: 1.4;
+}
 /* RESPONSIVE */
 
 @media (max-width: 750px) {

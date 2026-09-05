@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './settings.css';
 
 function Settings() {
+    const [dailyReminder, setDailyReminder] = useState(true);
+    const [progressUpdates, setProgressUpdates] = useState(true);
+    const [message, setMessage] = useState('');
     return (
         <div className="settings-page">
 
@@ -21,7 +25,11 @@ function Settings() {
                         </div>
 
                         <label className="toggle">
-                            <input type="checkbox" defaultChecked />
+                            <input
+                                type="checkbox"
+                                checked={dailyReminder}
+                                onChange={() => setDailyReminder(!dailyReminder)}
+                            />
                             <span></span>
                         </label>
                     </div>
@@ -33,7 +41,11 @@ function Settings() {
                         </div>
 
                         <label className="toggle">
-                            <input type="checkbox" defaultChecked />
+                            <input
+                                type="checkbox"
+                                checked={progressUpdates}
+                                onChange={() => setProgressUpdates(!progressUpdates)}
+                            />
                             <span></span>
                         </label>
                     </div>
@@ -72,7 +84,9 @@ function Settings() {
                             <p>Update your account password.</p>
                         </div>
 
-                        <button>Change</button>
+                        <button onClick={() => setMessage('Password change will be available after backend authentication is connected.')}>
+                            Change
+                        </button>
                     </div>
 
                     <div className="account-action">
@@ -81,8 +95,16 @@ function Settings() {
                             <p>Manage your coding platform connections.</p>
                         </div>
 
-                        <button>Manage</button>
+                        <button onClick={() => setMessage('Platform management will be connected to your account settings.')}>
+                            Manage
+                        </button>
                     </div>
+                    {message && (
+                        <div className="settings-message">
+                            {message}
+                            <button onClick={() => setMessage('')}>×</button>
+                        </div>
+                    )}
                 </div>
 
             </div>

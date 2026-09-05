@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import './recommendations.css';
 
 function Recommendations() {
+    const [openReason, setOpenReason] = useState(null);
     return (
         <div className="recommendations-page">
 
@@ -82,13 +84,27 @@ function Recommendations() {
 
                     <div className="problem-action">
 
-                        <button className="solve-btn">
+                        <a
+                            href="https://leetcode.com/problems/minimum-size-subarray-sum/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="solve-btn"
+                        >
                             Solve on LeetCode ↗
-                        </button>
+                        </a>
 
-                        <button className="why-btn">
-                            Why this?
+                        <button
+                            className="why-btn"
+                            onClick={() => setOpenReason(openReason === 1 ? null : 1)}
+                        >
+                            {openReason === 1 ? 'Hide reason' : 'Why this?'}
                         </button>
+                        {openReason === 1 && (
+                            <p className="why-reason">
+                                This problem is recommended because you struggled with
+                                window condition variations in previous problems.
+                            </p>
+                        )}
 
                     </div>
 
@@ -133,13 +149,28 @@ function Recommendations() {
 
                     <div className="problem-action">
 
-                        <button className="solve-btn">
+                        <a
+                            href="https://www.hackerrank.com/challenges/ctci-longest-substring/problem"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="solve-btn"
+                        >
                             Solve on HackerRank ↗
+                        </a>
+
+                        <button
+                            className="why-btn"
+                            onClick={() => setOpenReason(openReason === 2 ? null : 2)}
+                        >
+                            {openReason === 2 ? 'Hide reason' : 'Why this?'}
                         </button>
 
-                        <button className="why-btn">
-                            Why this?
-                        </button>
+                        {openReason === 2 && (
+                            <p className="why-reason">
+                                This helps you understand how a dynamic sliding window
+                                can be adjusted while solving string problems.
+                            </p>
+                        )}
 
                     </div>
 
@@ -183,13 +214,28 @@ function Recommendations() {
 
                     <div className="problem-action">
 
-                        <button className="solve-btn">
+                        <a
+                            href="https://leetcode.com/problems/fruit-into-baskets/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="solve-btn"
+                        >
                             Solve on LeetCode ↗
+                        </a>
+
+                        <button
+                            className="why-btn"
+                            onClick={() => setOpenReason(openReason === 3 ? null : 3)}
+                        >
+                            {openReason === 3 ? 'Hide reason' : 'Why this?'}
                         </button>
 
-                        <button className="why-btn">
-                            Why this?
-                        </button>
+                        {openReason === 3 && (
+                            <p className="why-reason">
+                                This problem builds confidence with sliding window
+                                variations before moving to harder problems.
+                            </p>
+                        )}
 
                     </div>
 

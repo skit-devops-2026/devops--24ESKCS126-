@@ -168,6 +168,14 @@
     text-decoration: underline;
 }
 
+.form-error {
+    margin: 10px 0;
+    padding: 10px 12px;
+    border-radius: 7px;
+    background: #fff0f0;
+    color: #c0392b;
+    font-size: 12px;
+}
 
 /* RESPONSIVE */
 

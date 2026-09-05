@@ -83,8 +83,33 @@
     transition: 0.2s ease;
 }
 
-.sidebar-nav a:hover {
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
     background-color: #eae4fd;
-
     color: #5b2bc5;
+}
+
+@media (max-width: 700px) {
+    :root {
+        --sidebar-width: 180px;
+    }
+
+    .logo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo-text {
+        font-size: 19px;
+    }
+
+    .sidebar-nav {
+        padding: 0 12px;
+        margin-top: 45px;
+    }
+
+    .sidebar-nav a {
+        padding: 0 10px;
+        font-size: 13px;
+    }
 }

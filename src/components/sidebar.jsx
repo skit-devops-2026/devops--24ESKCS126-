@@ -1,5 +1,5 @@
 import './sidebar.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
     return (
@@ -12,30 +12,12 @@ function Sidebar() {
 
             <nav className="sidebar-nav">
 
-                <Link to="/overview">
-                    Overview
-                </Link>
-
-                <Link to="/my-skill-map">
-                    My Skill Map
-                </Link>
-
-                <Link to="/recommendations">
-                    Recommendations
-                </Link>
-
-                <Link to="/activity">
-                    Activity
-                </Link>
-
-                <Link to="/profile">
-                    Profile
-                </Link>
-
-                <Link to="/setting">
-                    Settings
-                </Link>
-
+                <NavLink to="/overview">Overview</NavLink>
+                <NavLink to="/my-skill-map">My Skill Map</NavLink>
+                <NavLink to="/recommendations">Recommendations</NavLink>
+                <NavLink to="/activity">Activity</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/setting">Settings</NavLink>
             </nav>
 
         </aside>

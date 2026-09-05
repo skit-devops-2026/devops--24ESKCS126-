@@ -62,3 +62,18 @@
 .username {
     margin-left: 1px;
 }
+@media (max-width: 700px) {
+    .rightbar {
+        padding-right: 15px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .profile-picture {
+        font-size: 24px;
+    }
+
+    .topbar-icon {
+        font-size: 19px;
+    }
+}

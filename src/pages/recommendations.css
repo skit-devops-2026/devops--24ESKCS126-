@@ -236,6 +236,7 @@
     width: 100%;
     height: 40px;
     padding: 0 12px;
+    box-sizing: border-box;
 
     border: none;
     border-radius: 8px;
@@ -249,10 +250,17 @@
 
     cursor: pointer;
     transition: 0.2s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
 }
 
 .solve-btn:hover {
     background: #ded0ff;
+    color: #6035c5;
 }
 
 .why-btn {
@@ -269,6 +277,16 @@
 
 .why-btn:hover {
     text-decoration: underline;
+}
+
+.why-reason {
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    background: #f5f1ff;
+    border-radius: 7px;
+    color: #625d78;
+    font-size: 11px;
+    line-height: 1.5;
 }
 
 /* RESPONSIVE */
@@ -318,5 +336,8 @@
     .solve-btn {
         width: auto;
         padding: 0 15px;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
     }
 }

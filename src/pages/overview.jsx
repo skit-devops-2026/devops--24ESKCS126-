@@ -1,5 +1,6 @@
 import './overview.css'
 import {MdCode} from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 function Overview(){
@@ -72,7 +73,9 @@ function Overview(){
                             DSAForge recommends 3 medium problems to strengthen this concept
                             before moving to Two Pointer.
                         </p>
-                        <button>View Recommended Problems </button>
+                        <Link to="/recommendations" className="overview-recommendation-btn">
+                            View Recommended Problems →
+                        </Link>
                     </div>
                 <div>
                         

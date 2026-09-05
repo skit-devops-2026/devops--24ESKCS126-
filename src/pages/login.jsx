@@ -1,11 +1,29 @@
+import { useState } from 'react';
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const navigate = useNavigate();
+    const [error, setError] = useState('');
+    const [forgotMessage, setForgotMessage] = useState('');
 
     const handleLogin = (e) => {
         e.preventDefault();
+
+        const email = e.target.email.value.trim();
+        const password = e.target.password.value;
+
+        if (!email || !password) {
+            setError('Please fill in all fields.');
+            return;
+        }
+
+        if (!email.includes('@')) {
+            setError('Please enter a valid email address.');
+            return;
+        }
+
+        setError('');
         navigate('/overview');
     };
 
@@ -48,8 +66,8 @@ function Login() {
                             <label>Email</label>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Enter your email"
-                                required
                             />
                         </div>
 
@@ -57,8 +75,8 @@ function Login() {
                             <label>Password</label>
                             <input
                                 type="password"
+                                name="password"
                                 placeholder="Enter your password"
-                                required
                             />
                         </div>
 
@@ -68,13 +86,23 @@ function Login() {
                                 Remember me
                             </label>
 
-                            <button
-                                type="button"
-                                className="forgot-password"
-                            >
-                                Forgot password?
-                            </button>
+                                <button
+                                    type="button"
+                                    className="forgot-password"
+                                    onClick={() =>
+                                        setForgotMessage(
+                                            'Password reset will be available after backend authentication is connected.'
+                                        )
+                                    }
+                                >
+                                    Forgot password?
+                                </button>
                         </div>
+                        {forgotMessage && (
+                            <p className="forgot-message">
+                                {forgotMessage}
+                            </p>
+                        )}
 
                         <button
                             type="submit"

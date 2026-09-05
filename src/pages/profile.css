@@ -236,6 +236,47 @@
     cursor: pointer;
 }
 
+.detail-row input {
+    width: 220px;
+    padding: 8px 10px;
+    border: 1px solid #ddd8ec;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    color: #29243d;
+    background: #ffffff;
+}
+
+.detail-row input:focus {
+    border-color: #7a55d6;
+}
+
+.platform-row button {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.not-connected {
+    padding: 7px 12px;
+    border-radius: 7px;
+    background: #e9ddff;
+    color: #6035c5;
+    font-size: 12px;
+}
+
+.not-connected:hover {
+    background: #ded0ff;
+}
+
+.connected {
+    padding: 7px 12px;
+    border-radius: 7px;
+    background: #e8f7ee;
+    color: #27804c;
+    font-size: 12px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 850px) {

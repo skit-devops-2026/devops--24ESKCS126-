@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './profile.css';
 
 function Profile() {
+    const [editing, setEditing] = useState(false);
+    const [codeChefConnected, setCodeChefConnected] = useState(false);
     return (
         <div className="profile-page">
 
@@ -46,21 +49,36 @@ function Profile() {
 
                         <div className="detail-row">
                             <span>Name</span>
-                            <p>Shaili</p>
+                            {editing ? (
+                                <input type="text" defaultValue="Shaili" />
+                            ) : (
+                                <p>Shaili</p>
+                            )}
                         </div>
 
                         <div className="detail-row">
                             <span>Email</span>
-                            <p>shaili@example.com</p>
+                            {editing ? (
+                                <input type="email" defaultValue="shaili@example.com" />
+                            ) : (
+                                <p>shaili@example.com</p>
+                            )}
                         </div>
 
                         <div className="detail-row">
                             <span>Learning Goal</span>
-                            <p>Master DSA</p>
+                            {editing ? (
+                                <input type="text" defaultValue="Master DSA" />
+                            ) : (
+                                <p>Master DSA</p>
+                            )}
                         </div>
 
-                        <button className="edit-profile-btn">
-                            Edit Profile
+                        <button
+                            className="edit-profile-btn"
+                            onClick={() => setEditing(!editing)}
+                        >
+                            {editing ? 'Cancel' : 'Edit Profile'}
                         </button>
                     </div>
 
@@ -91,9 +109,12 @@ function Profile() {
                                 <p>Not connected</p>
                             </div>
 
-                            <span className="not-connected">
-                                Connect
-                            </span>
+                            <button
+                                className={codeChefConnected ? "connected" : "not-connected"}
+                                onClick={() => setCodeChefConnected(!codeChefConnected)}
+                            >
+                                {codeChefConnected ? "Connected" : "Connect"}
+                            </button>
                         </div>
                     </div>
 
