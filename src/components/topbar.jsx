@@ -1,4 +1,5 @@
 import './topbar.css';
+import { NavLink } from "react-router-dom";
 
 import {
     MdNotifications,
@@ -11,17 +12,28 @@ function Topbar() {
     return (
         <header className="topbar">
 
+            <div className="logo">
+                <span className="logo-icon">🚀</span>
+                <span className="logo-text">DSAForge</span>
+            </div>
+
             <div className="rightbar">
 
-                <MdNotifications className="topbar-icon" />
+                <MdNotifications
+                    className="topbar-icon"
+                    aria-label="Notifications"
+                />
 
-                <MdAccountCircle className="profile-picture" />
+                <NavLink to="/profile" className="profile-link">
 
-                <span className="username">
-                    Shaili
-                </span>
+                    <MdAccountCircle
+                        className="profile-picture"
+                        aria-label="User profile"
+                    />
 
-                <MdKeyboardArrowDown className="dropdown-icon" />
+                    <MdKeyboardArrowDown className="dropdown-icon" />
+
+                </NavLink>
 
             </div>
 
